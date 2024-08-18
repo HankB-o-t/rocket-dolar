@@ -1,0 +1,14 @@
+[package]
+name = "dlrs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+reqwest = {version = "0.12.5", features = ["json"]}
+rocket = "0.5.1"
+serde = "1.0.208"
+tokio = {version = "1", features=["full"]}
+
+[dependencies.rocket_dyn_templates]
+version = "*"
+features = ["handlebars"]
