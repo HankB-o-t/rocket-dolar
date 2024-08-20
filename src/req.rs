@@ -29,3 +29,12 @@ pub async fn precio_compra() -> Result<String, reqwest::Error> {
     let dllc = dolarc[1].compra.to_string();
     return Ok(dllc);
 }
+
+/*
+*
+*   Como funciona esta parte de la app?
+*   Primero, se hace el request a la api del dolar y luego se
+*   manejan los datos devueltos con la estructura "Dolar".
+*   Finalmente, estos datos son retornados para usarse.
+*
+* */
