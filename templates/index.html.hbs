@@ -1,20 +1,70 @@
 <head>
   <title>Mi paginon</title>
 </head>
-<body>
+<body class="background">
   <style>
-    h1 {
-      font-family: "Arial";
-      margin-top: 30px;
-      margin-left: 30px;
+    .title {
+        margin-top: 50px;
+        font-size: 3em;
+    }
+    h1 {  
+      color: white;
+      opacity: 100%;
+      text-align: center;
+	    font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace; 
+    }
+    h3 {
+      color: white;
+      text-align: center;
+	    font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace; 
+    }
+    p {
+      color: white;
+	    font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace; 
+    }
+    a {
+      color: white;
+	    font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace; 
     }
     h2 {
-      font-family: "Arial";
-      margin-top: 50px;
-      margin-left: 30px;
+      color: white;
+      text-align: center;
+	    font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace; 
+    }
+    .background {
+      background: rgb(2,0,36);
+      background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    }
+    .centered {
+      margin: auto;
+      width: 50%;
+      text-align: center;
+    }
+    .padder {
+      margin-top: 9.5em;
+    }
+    .box {
+      margin: auto;
+      width: 25%;
+      text-align: center;
+      border: 0px solid #000;
+      border-radius: 10px;
+      padding: 5px;
+      background-color: rgba(42, 42, 46, 0.7);
     }
   </style>
-  <h1> Compra dolar blue: ${{dlc}} </h1>
-  <h1> Venta dolar blue: ${{dlv}} </h1>
-  <h2>Datos sacados de https://dolarapi.com</h2>
+  <div class="centered">
+    <h1 class="title">dlrs - Dolar Blue<h1/>
+    <br />
+    <br />
+    <h2> Compra: </h2>
+    <h1 class="box"> ${{dlc}} </h1>
+    <br />
+    <h2> Venta: </h2>
+    <h1 class="box "> ${{dlv}} </h1>
+  </div>
+  <div class="padder"><div/>
 </body>
+<footer>
+  <p>Datos sacados de <a href="https://dolarapi.com">dolarapi<a/> | <a href="https://github.com/HankB-o-t">h.ank<a/> <p/>
+<footer/>
