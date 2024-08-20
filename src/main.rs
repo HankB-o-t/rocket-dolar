@@ -2,11 +2,6 @@
 use rocket_dyn_templates::{Template, context};
 mod req;
 
-//  What this ugly ahh code does.  
-//  This code is just basically the server
-//  The important shit is on the req.rs file
-//  inefficient ahh code
-
 #[get("/")]
 async fn index() -> Template {
     let dolar_c = req::precio_compra().await.unwrap();
@@ -23,3 +18,12 @@ fn rocket() -> _ {
         .mount("/", routes![index])
         .attach(Template::fairing())
 }
+
+// Como llegue a hacer esto:
+// Se me ocurrio un dia.
+//
+// Como funciona:
+// En el archivo main.rs (este de aca) se maneja todo el server.
+// En el archivo req.rs se hacen las requests a la api del dolar.
+// En la carpeta templates esta todo lo piola.
+
