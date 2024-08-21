@@ -2,6 +2,8 @@
 use rocket_dyn_templates::{Template, context};
 mod req;
 
+// let me cook
+
 #[get("/")]
 async fn index() -> Template {
     let dolar_c = req::precio_compra(1).await.unwrap();
@@ -32,11 +34,13 @@ async fn oficial() -> Template {
     })
 }
 
-#[launch]
-fn rocket() -> _ {
-    rocket::build()
+#[shuttle_runtime::main]
+async fn main() -> shuttle_rocket::ShuttleRocket {
+    let rocket = rocket::build()
         .mount("/", routes![index, oficial, tarjeta])
-        .attach(Template::fairing())
+        .attach(Template::fairing());
+
+    Ok(rocket.into())
 }
 
 // Como llegue a hacer esto:
