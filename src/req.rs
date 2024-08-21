@@ -6,7 +6,18 @@ struct Dolar {
     venta: f32,
 }
 
-pub async fn precio_venta() -> Result<String, reqwest::Error> {
+/*  tipos dolar con sus respectivos numeros
+*   0: Dolar oficial
+*   1: Dolar blue
+*   2: Dolar bolsa
+*   3: Dolar contado con liquidacion
+*   4: Dolar mayorista
+*   5: Dolar cripto
+*   6: Dolar Tarjeta
+* */
+
+
+pub async fn precio_venta(tdolar: usize) -> Result<String, reqwest::Error> {
     let dolarc: Vec<Dolar> = reqwest::Client::new()
         .get("https://dolarapi.com/v1/dolares")
         .send()
@@ -14,11 +25,11 @@ pub async fn precio_venta() -> Result<String, reqwest::Error> {
         .json()
         .await?;
     
-    let dllv = dolarc[1].venta.to_string();
+    let dllv = dolarc[tdolar].venta.to_string();
     return Ok(dllv);
 }
 
-pub async fn precio_compra() -> Result<String, reqwest::Error> {
+pub async fn precio_compra(tdolar: usize) -> Result<String, reqwest::Error> {
     let dolarc: Vec<Dolar> = reqwest::Client::new()
         .get("https://dolarapi.com/v1/dolares")
         .send()
@@ -26,7 +37,7 @@ pub async fn precio_compra() -> Result<String, reqwest::Error> {
         .json()
         .await?;
     
-    let dllc = dolarc[1].compra.to_string();
+    let dllc = dolarc[tdolar].compra.to_string();
     return Ok(dllc);
 }
 
