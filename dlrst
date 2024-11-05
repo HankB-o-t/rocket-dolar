@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "Which branch to start?"
+echo "      1) main         "
+echo "      2) shuttle      "
+read -p "> " CHOICE
+
+if [ $CHOICE = 1 ] ; then
+  echo
+  git checkout master
+  cargo run
+elif [ $CHOICE = 2 ] ; then
+  echo
+  echo "Already deployed at:"
+  echo "  https://dlrs.shuttleapp.rs"
+else
+  echo
+  echo "-- Not valid option --"
+fi
