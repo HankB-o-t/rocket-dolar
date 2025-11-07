@@ -34,13 +34,11 @@ async fn oficial() -> Template {
     })
 }
 
-#[shuttle_runtime::main]
-async fn main() -> shuttle_rocket::ShuttleRocket {
+#[launch]
+fn rocket() -> _ {
     let rocket = rocket::build()
         .mount("/", routes![index, oficial, tarjeta])
         .attach(Template::fairing());
-
-    Ok(rocket.into())
 }
 
 // Como llegue a hacer esto:
