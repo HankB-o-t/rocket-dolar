@@ -35,6 +35,7 @@ async fn oficial() -> Template {
 #[launch]
 fn rocket() -> _ {
     rocket::build()
+        .configure(rocket::Config::figment().merge(("port", 10000)))
         .mount("/", routes![index, oficial, tarjeta])
         .attach(Template::fairing())
 }
