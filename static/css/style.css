@@ -11,9 +11,15 @@
       color: white;
 	    font-family: Lucida Sans Typewriter,Lucida Console,monaco,Bitstream Vera Sans Mono,monospace; 
     }
-    .background {
+    .bg-blue {
       background: rgb(2,0,36);
       background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    }
+    .bg-green {
+      background: linear-gradient(90deg, rgba(0,25,36,1) 0%, rgba(14,176,45,1) 100%);  
+    }
+    .bg-red {
+      background: linear-gradient(90deg, rgba(36,0,26,1) 0%, rgba(176,14,48,1) 100%); 
     }
     .centered {
       margin: auto;
