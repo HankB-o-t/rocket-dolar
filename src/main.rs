@@ -9,8 +9,9 @@ const PROTOCOL: &str = "http";
 
 #[get("/")]
 async fn index(config: &Config) -> Template {
-    let dolar_c = req::precio_compra(1).await.unwrap();
-    let dolar_v = req::precio_venta(1).await.unwrap();
+    let dolar = req::precio(1).await.unwrap();
+    let dolar_c = &dolar[0];
+    let dolar_v = &dolar[1];
     Template::render("index", context!{
         dlc: dolar_c,
         dlv: dolar_v,
@@ -22,8 +23,9 @@ async fn index(config: &Config) -> Template {
 
 #[get("/tarjeta")]
 async fn tarjeta(config: &Config) -> Template {
-    let dolar_c = req::precio_compra(6).await.unwrap();
-    let dolar_v = req::precio_venta(6).await.unwrap();
+    let dolar = req::precio(6).await.unwrap();
+    let dolar_c = &dolar[0];
+    let dolar_v = &dolar[1];
     Template::render("tarjeta", context!{
         dlc: dolar_c,
         dlv: dolar_v,
@@ -35,8 +37,9 @@ async fn tarjeta(config: &Config) -> Template {
 
 #[get("/oficial")]
 async fn oficial(config: &Config) -> Template {
-    let dolar_c = req::precio_compra(0).await.unwrap();
-    let dolar_v = req::precio_venta(0).await.unwrap();
+    let dolar = req::precio(0).await.unwrap();
+    let dolar_c = &dolar[0];
+    let dolar_v = &dolar[1];
     Template::render("oficial", context!{
         dlc: dolar_c,
         dlv: dolar_v,
